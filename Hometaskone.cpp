@@ -15,7 +15,7 @@ float e;
 int one = 1;
 const short int two = 0xA;
 const long long int three = 01;
-long long int four = 0b101;
+char four = 0b101;
 char five = 'f';
 unsigned int six = 1U;
 const long long int seven = 100LL;
