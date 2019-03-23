@@ -423,8 +423,8 @@ for (int i = 0; i < 2; ++i)
 	Сумму всех элементов массива
 	Количество всех четных элементов.
 	Максимальный и минимальный элементы массива вместе с их индексами
-	
-int data[10][10],sum=0,count=0;
+	*/
+int data[10][10], sum = 0, count = 0, k,k1,k2,k3,min = numeric_limits<int>::max(), max = numeric_limits<int>::min();
 for (int i = 0; i < 10; ++i)
 {
 	for (int j = 0;j < 10;j++)
@@ -459,6 +459,27 @@ for (int i = 0; i < 10; ++i)
 	}
 }
 cout << count << endl;
+for (int i = 0; i < 10; ++i)
+{
+	for (int j = 0;j < 10;j++)
+	{
+		if (data[i][j]<min)
+		{
+			min = data[i][j];
+			k = i;
+			k1 = j;
+		}
+		if (data[i][j] > max)
+		{
+			max = data[i][j];
+			k2 = i;
+			k3 = j;
+		}
+
+	}
+}
+cout << max << " " << k2 << " " << k3 << endl;
+cout << min << " " << k << " " << k1 << endl;
 	/* Дополнительное задание
 	На вход подается строка, описывающая ситуацию на поле в игре "Крестики-нолики".
 	На ее основании необходимо заполнить двумерный массив char field[3][3],
