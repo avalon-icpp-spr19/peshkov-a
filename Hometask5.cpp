@@ -180,20 +180,23 @@ int main()
 	1 2 3 3 2 1	0				  2
 	1 2 5 4 3 5 4 5 0			3*/
 
-		int  count = 0, max = numeric_limits<int>::min();
+	/*int  count = 0, max = numeric_limits<int>::min();
 	while (true)
 	{
-	int n;
-	cin >> n;
-	if (max==n)
-	{
-	++count;
-	}
-	if (n>max)
-	{
-	max=n;
-	count=1;
-	}
+		int n;
+		cin >> n;
+		if (n == 0) {
+			break;
+		}
+		if (max == n)
+		{
+			++count;
+		}
+		if (n>max)
+		{
+			max = n;
+			count = 1;
+		}
 	}
 
 	cout << count;
@@ -250,31 +253,34 @@ int main()
 	6							        8
 	10							      55
 	25							      75025*/
-	/*int n, fib = 0, fib0 = 0, fib1 = 1, i = 1;
+	/*int n, fib = 0, fib0 = 0, fib1 = 1, i=1;
 	cin >> n;
 	while (i != n) {
-		fib = fib0 + fib1;
-		fib0 = fib1;
-		fib1 = fib;
-		i = i + 1;
+		if (n == 0)
+		{
+			break;
+		}
+	fib = fib0 + fib1;
+	fib0 = fib1;
+	fib1 = fib;
+	i = i + 1;
 	}
 	if (n == 0)
 	{
-		cout << 0;
+	cout << 0;
 	}
 	else if (n == 1)
 	{
-		cout << 1;
+	cout << 1;
 	}
 	else if (n == 2)
 	{
-		cout << 1;
+	cout << 1;
 	}
 	else
 	{
-		cout << fib;
+	cout << fib;
 	}
-
 	/*Задание 6 (дополнительное)
 	Элемент последовательности называется локальным максимумом,
 	если он строго больше предыдущего и последующего элемента последовательности.
