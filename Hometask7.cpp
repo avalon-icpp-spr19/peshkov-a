@@ -2,7 +2,7 @@
 #include<cmath>
 #include <string>
 #include <limits>
-#include "Extention.hpp"
+#include "ext.hpp"
 using namespace std;
 using namespace ext;
 const int MAX_INPUT_SIZE = 256;
@@ -10,7 +10,6 @@ int main()
 {
 	/*
 	Задание №1
-	int val = 10;
 	выведите адрес переменной val
 	создайте указатель для хранения адреса переменной val
 	сохраните адрес переменной val в созданный указатель
