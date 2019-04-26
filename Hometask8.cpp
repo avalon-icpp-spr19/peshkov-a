@@ -2,9 +2,7 @@
 #include<cmath>
 #include <string>
 #include <limits>
-#include "Extention.hpp"
 using namespace std;
-using namespace ext;
 /*
 Задание №1
 Создать точку Point, используйте две поля x, y типа float.
@@ -36,7 +34,6 @@ cin >> one.y;
 if (one.x*one.x + one.y*one.y == R*R) {
 	cout << "Принадлежит" << endl;
 }
-
 }
 	Написать программу, которая по двум заданным точкам - концам отрезка находит точку середины отрезка.
 	Координаты точек пользователь вводит с клавиатуры.
@@ -82,8 +79,7 @@ int main()
 		cout << "Пересекаются";
 	}
 }
-
- 	Задание №3
+	Задание №3
 	Создать перечисление (enum) Color, для хранения 7 цветов радуги.
 	Создать структуру Triangle, содержащее поле типа Color
 	и массив для хранения трех элементов типа int (длины сторон).
@@ -105,7 +101,6 @@ int main()
 	int l;
 	l= one.text
 	cin >> l
-
 	switch (l)
 	{
 	case(Red):
@@ -131,7 +126,6 @@ int main()
 		break;
 	default:
 		cout << "У нас только 7 цветов" << endl;
-
 	}
 	for (int i = 0; i < 3; ++i)
 	{
@@ -214,10 +208,7 @@ int main()
 		{
 			for (int j = 0;j < 3;++j)
 			{
-
-
 				one[i].side[j] = GetRandomValue(1, 10);
-
 			}
 		}
 		l = one[i].text;
@@ -245,7 +236,6 @@ int main()
 		case(Purple):
 			++kP;
 			break;
-
 		}
 		one[i].P = one[i].side[1] + one[i].side[2] + one[i].side[0];
 		if (one[i].P > P)
@@ -265,7 +255,6 @@ int main()
 		<< "Cyan: " << kC << " "
 		<< "Blue: " << kB << " "
 		<< "Purple: " << kP;
-
 }
 	Задание №6
 	Написать программу, которая проверяет правильность заданных значений даты.
@@ -281,4 +270,68 @@ int main()
 	29 2 2004					Дата корректна
 	29 2 1900					Дата некоррентна
 	29 2 2000					Дата корректна
-*/
+	
+struct date {int day; int month;int year;};
+int main(){
+	int day, month, year;
+	date one;
+	cin >> one.day >> one.month >> one.year;
+	switch (one.month)
+	{
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		if (one.day > 31)
+		{
+			cout << "Не существует" << endl;
+		}
+		else
+		{
+			cout << "Существует" << endl;
+		}
+		break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		if (one.day > 30)
+		{
+			cout << "Не существует" << endl;
+		}
+		else
+		{
+			cout << "Существует" << endl;
+		}
+		break;
+	case 2:
+		if (one.year % 400 == 0 || (one.year % 4 == 0) && (one.year % 100 != 0))
+		{
+			if (one.day > 29)
+			{
+				cout << "Не существует" << endl;
+			}
+			else
+			{
+				cout << "Существует" << endl;
+			}
+		}
+		else
+		{
+			if (one.day > 28) {
+				cout << "Не существует" << endl;
+			}
+			else
+			{
+				cout << "Существует" << endl;
+			}
+		}
+		break;
+	default:
+		cout << "Такого месяца не существует" << endl;
+		break;
+	}
+}
