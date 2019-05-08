@@ -2,7 +2,9 @@
 #include<cmath>
 #include <string>
 #include <limits>
+#include "Extention.hpp"
 using namespace std;
+using namespace ext;
 /*
 Задание №1
 Создать точку Point, используйте две поля x, y типа float.
@@ -139,11 +141,11 @@ int main()
 	Проинициализировать его точками со случайными значениями координат в пределах от 0 до 100.
 	Выведите на экран координаты:
 		- точки с наименьшей x координатой
-		- двух точек, расстояние между которыми минимально.
+		- двух точек, расстояние между которыми минимально.*/
 struct Point { float x; float y; };
 int main()
 {
-	int minx = numeric_limits<int>::max(), minPoint = numeric_limits<int>::max(), k, k1;
+	int minx = numeric_limits<int>::max(), minPoint = numeric_limits<int>::max(), kx,ky, k1x,k1y;
 	Point one[20];
 	for (int i = 0;i < 20;++i)
 	{
@@ -175,14 +177,17 @@ int main()
 				if (pow(one[i].x - one[j].x, 2) + pow(one[i].y - one[j].y, 2) < pow(minPoint, 2))
 				{
 					minPoint = sqrt(pow(one[i].x - one[j].x, 2) + pow(one[i].y - one[j].y, 2));
-					k = i;
-					k1 = j;
+					kx = one[i].x;
+					ky = one[i].y;
+					k1x = one[j].x;
+					k1y = one[j].y;
 				}
 			}
 		}
 	}
-	cout << minPoint << " " << minx << " " << k << " " << k1 << endl;
+	cout << minPoint << " " << minx << " " << kx << " " << ky << " " << k1x << " " << k1y << endl;
 }
+	/*
 	Задание №5
 	Создать массив из 100 элементов типа Triangle.
 	Проинициализировать его случайными значениями (длина стороны от 1 до 10).
@@ -270,7 +275,7 @@ int main()
 	29 2 2004					Дата корректна
 	29 2 1900					Дата некоррентна
 	29 2 2000					Дата корректна
-	
+
 struct date {int day; int month;int year;};
 int main(){
 	int day, month, year;
@@ -334,4 +339,4 @@ int main(){
 		cout << "Такого месяца не существует" << endl;
 		break;
 	}
-}
+}*/
