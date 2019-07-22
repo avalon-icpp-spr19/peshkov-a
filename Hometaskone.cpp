@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 const float PI = 3.14159;
-const unsigned char week = 7;
-const unsigned short int year = 365;
+const unsigned char WEEK = 7;
+const unsigned short int YEAR = 365;
 int main()
 
 
 {
 	 int a=0;
-unsigned int b=1;
+unsigned int b=4294967295U;
 short int c=sizeof(long long);
 char d=numeric_limits<char>::max();
 float e;
 int one = 1;
 const short int two = 0xA;
-const long long int three = 01;
+const long long int three = 01LL;
 char four = 0b101;
 char five = 'f';
 unsigned int six = 1U;
